@@ -8,7 +8,7 @@ pipeline {
       }
       stage('Run Tests') {
           steps {
-              # Simple GET request to a specified URL
+              
               curl https://api.example.com/endpoint
 
           
