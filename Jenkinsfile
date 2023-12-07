@@ -9,16 +9,16 @@ pipeline {
       stage('Run Tests') {
           steps {
               
-              curl https://api.example.com/endpoint
+              curl https://jsonplaceholder.typicode.com/posts/1
 
           
-              if curl -s --head https://api.example.com/endpoint | grep "200 OK" > /dev/null; then 
+              if curl -s --head https://jsonplaceholder.typicode.com/posts/1 | grep "200 OK" > /dev/null; then 
                 echo "Endpoint is reachable"
 
               else
                 echo "Endpoint in not reachable"
     
-              time curl -o /dev/null -s -w "%[time_total]\n" https://api.example.com/endpoint
+              time curl -o /dev/null -s -w "%[time_total]\n" https://jsonplaceholder.typicode.com/posts/1
               }
 } 
 }
